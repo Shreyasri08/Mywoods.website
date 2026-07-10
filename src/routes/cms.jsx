@@ -38,27 +38,29 @@ function CMS(){
 
 
    
-    //  GET API Call
-     const [data,setData]=useState(null);
+ // GET API Call
+    const [data, setData] = useState(null);
 
-    const callAPI= async()=>{
-        try{
-            const response= await fetch("https://mywoods-api.onrender.com/api/woods",{
-                method:"GET",
+    const callAPI = async () => {
+        try {
+            const response = await fetch("https://shreya-mywoods-api.onrender.com/api/woods", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
             });
-
-             const result= await response.json();
-
-             console.log(result);
-             setData(result);
-
-        }
-        catch(error){
+            const result = await response.json();
+            console.log(result);
+            setData(result);
+        } catch (error) {
             console.log(error);
         }
-        
-        
     };
+    
+    useEffect(() => {
+        callAPI();
+    }, []);
+
     const [name,setName]=useState("");
     const [description,setDescription]=useState("");
     const [origin,setorigin]=useState("");
@@ -81,7 +83,7 @@ function CMS(){
 
 
        
-            const response= await fetch("https://mywoods-api.onrender.com/api/woods",{
+            const response= await fetch("https://shreya-mywoods-api.onrender.com/api/woods",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
@@ -114,7 +116,7 @@ function CMS(){
 
     const callDeleteAPI= async()=>{
         try{
-            const response= await fetch("https://mywoods-api.onrender.com/api/woods/"+id,{
+            const response= await fetch("https://shreya-mywoods-api.onrender.com/api/woods/"+id,{
                 method:"DELETE",
                  headers:{
                     "Content-Type":"application/json",
