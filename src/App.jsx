@@ -2,7 +2,7 @@
 import { Routes, Route, Link } from "react-router";
 import About from "./routes/About";
 import Contact from "./routes/Contact";
-import Woods from "./routes/Woods/pages";
+import Woods from "./features/Woods";
 import Home from "./routes/Home";
 import Header from "./components/compound/Header";
 import Footer from "./components/compound/Footer";
